@@ -31,11 +31,13 @@ export default function Credit() {
       <TextField
           label="Dato"
           defaultValue={'L.'}
+          type='number'
           {...form.getInputProps('compra1')}
         />
         <TextField
           label="Dato"
           defaultValue={'L.'}
+          type='number'
           {...form.getInputProps('compra2')}
         />
       </div>
@@ -53,11 +55,13 @@ export default function Credit() {
         <TextField
           label="Dato"
           defaultValue={'L.'}
+          type='number'
           {...form.getInputProps('importacion1')}
         />
         <TextField
           label="Dato"
           defaultValue={'L.'}
+          type='number'
           {...form.getInputProps('importacion2')}
         />
       </div>
@@ -75,11 +79,13 @@ export default function Credit() {
         <TextField
           label="Dato"
           defaultValue={'L.'}
+          type='number'
           {...form.getInputProps('import1')}
         />
         <TextField
           label="Dato"
           defaultValue={'L.'}
+          type='number'
           {...form.getInputProps('import2')}
         />
       </div>

@@ -1,16 +1,14 @@
-import { useForm } from '@mantine/form';
+import React from 'react';
 import { TextField } from '@mui/material';
 import Box from '@mui/material/Box';
 
 export default function Debit() {
-  const form = useForm({
-    initialValues: {
-      dato1: '',
-      dato2: ''
-    },
-  });
+    const [ventasNetas15, setventasNetas15] = React.useState<number>(0)
+    const [impuesto15, setImpuesto15] = React.useState<number>(0)
+    const [ventasNetas18, setventasNetas18] = React.useState<number>(0)
+    const [impuesto18, setImpuesto18] = React.useState<number>(0)
 
-  return (
+    return (
     <>
       <p style={{ fontWeight: 'bold', fontSize:20, margin:10, fontFamily:'sans-serif' }}>Determinación Del Débito Fiscal</p>
       <hr/>
@@ -27,12 +25,22 @@ export default function Debit() {
       <TextField
           label="Dato 1"
           defaultValue={'L.'}
-          {...form.getInputProps('dato1')}
+          type='number'
+          value={ventasNetas15}
+          onChange={(e)=>{
+            setventasNetas15(parseFloat(e.currentTarget.value))
+            setImpuesto15(parseFloat(e.currentTarget.value)*.15 || 0)
+        }}
         />
         <TextField
           label="Dato 2"
           defaultValue={'L.'}
-          {...form.getInputProps('dato2')}
+          type='number'
+          value={ventasNetas18}
+          onChange={(e)=>{
+            setventasNetas18(parseFloat(e.currentTarget.value))
+            setImpuesto18(parseFloat(e.currentTarget.value)*.18 || 0)
+        }}
         />
       </div>
       </Box>
@@ -51,12 +59,14 @@ export default function Debit() {
           id="outlined-disabled"
           label="Dato 1"
           defaultValue={'L.'}
+          value={impuesto15}
         />
         <TextField
           disabled
           id="outlined-disabled"
           label="Dato 2"
           defaultValue={'L.'}
+          value={impuesto18}
         />
       </div>
       </Box>
@@ -75,6 +85,7 @@ export default function Debit() {
         id="outlined-disabled"
         label="TOTAL"
         defaultValue={'L.'}
+        value={impuesto15+impuesto18}
       />
       </Box>
       </div>
