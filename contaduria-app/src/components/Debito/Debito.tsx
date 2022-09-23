@@ -1,5 +1,5 @@
 import React, { forwardRef, useImperativeHandle, useRef, useState } from 'react';
-import { Button, TextField } from '@mui/material';
+import { TextField } from '@mui/material';
 import Box from '@mui/material/Box';
 import { EntradaImpuesto } from '../EntradaImpuesto';
 import { ParImpuesto } from '../../Interfaces/interfaces';
@@ -21,26 +21,26 @@ export const Debito = forwardRef((props: any, ref) => {
       ventasExentasMercadoInterno?.current?.obtenerImpuestos().Valor15Porciento! +
       exportacionesFueraCA?.current?.obtenerImpuestos().Valor15Porciento! +
       exportacionesCA?.current?.obtenerImpuestos().Valor15Porciento! +
-      ventasExoneradas?.current?.obtenerImpuestos().Valor15Porciento!) * 0.15 );
+      ventasExoneradas?.current?.obtenerImpuestos().Valor15Porciento!) * 0.15);
     setDebitoVentas18Porciento((
       ventasNetasMercadoInterno?.current?.obtenerImpuestos().Valor18Porciento! +
       ventasExentasMercadoInterno?.current?.obtenerImpuestos().Valor18Porciento! +
       exportacionesFueraCA?.current?.obtenerImpuestos().Valor18Porciento! +
       exportacionesCA?.current?.obtenerImpuestos().Valor18Porciento! +
-      ventasExoneradas?.current?.obtenerImpuestos().Valor18Porciento!) * 0.18 );
+      ventasExoneradas?.current?.obtenerImpuestos().Valor18Porciento!) * 0.18);
     setTotalDebitoFiscal(debitoVentas15Porciento + debitoVentas18Porciento);
   }
 
   useImperativeHandle(ref, () => ({
     obtenerDebitoFiscal(): number {
-        return totalDebitoFiscal;
-    }
+      return totalDebitoFiscal;
+    },
+    calcularDebitoTotal
   }))
 
   return (
     <>
       <p style={{ fontWeight: 'bold', fontSize: 20, margin: 10, fontFamily: 'sans-serif' }}>Determinación del Débito Fiscal</p>
-      <Button onClick={() => calcularDebitoTotal()} >Calcular</Button>
       <hr />
       <Box component='form' noValidate autoComplete='off' sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}>
         <EntradaImpuesto ref={ventasNetasMercadoInterno} Texto='Ventas Netas en el Mercado Interno' />

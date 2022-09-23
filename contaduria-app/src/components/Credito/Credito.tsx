@@ -1,5 +1,5 @@
 import React, { forwardRef, useImperativeHandle, useRef, useState } from 'react';
-import { Button, TextField } from '@mui/material';
+import { TextField } from '@mui/material';
 import Box from '@mui/material/Box';
 import { EntradaImpuesto } from '../EntradaImpuesto';
 import { ParImpuesto } from '../../Interfaces/interfaces';
@@ -36,14 +36,14 @@ export const Credito = forwardRef((props: any, ref) => {
 
   useImperativeHandle(ref, () => ({
     obtenerCreditoFiscal(): number {
-        return totalCreditoFiscal;
-    }
+      return totalCreditoFiscal;
+    },
+    calcularCreditoTotal
   }))
 
   return (
     <>
       <p style={{ fontWeight: 'bold', fontSize: 20, margin: 10, fontFamily: 'sans-serif' }}>Determinación del Crédito Fiscal</p>
-      <Button onClick={() => calcularCreditoTotal()} >Calcular</Button>
       <hr />
       <Box component='form' noValidate autoComplete='off' sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}>
         <EntradaImpuesto ref={comprasNetasMercadoInterno} Texto='Compras Netas en el Mercado Interno' />
