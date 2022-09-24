@@ -16,6 +16,7 @@ export default function Body() {
 
   const debitoFormulario = useRef<{ obtenerDebitoFiscal(): number, calcularDebitoTotal(): void }>(null);
   const creditoFormulario = useRef<{ obtenerCreditoFiscal(): number, calcularCreditoTotal(): void }>(null);
+  
   useEffect(() => {
     const interval = setInterval(() => { calcularValores(); setTiempo(Date.now()) }, 1000);
     return () => {
@@ -35,6 +36,7 @@ export default function Body() {
     else {
       setSaldoFavorObligadoTributario(0);
     }
+
     if (debitoFiscal > creditoFiscal) {
       setSaldoFavorFisco(debitoFiscal - creditoFiscal);
     }

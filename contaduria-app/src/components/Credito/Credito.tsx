@@ -19,24 +19,24 @@ export const Credito = forwardRef((props: any, ref) => {
 
   const calcularCreditoTotal = (): void => {
     setCreditoComprasMercadoInterno15Porciento(
-      comprasNetasMercadoInterno?.current?.obtenerImpuestos().Valor15Porciento! * 0.15);
+      comprasNetasMercadoInterno?.current?.obtenerImpuestos().Valor15Porciento! * 0.15 | 0);
     setCreditoComprasMercadoInterno18Porciento(
-      comprasNetasMercadoInterno?.current?.obtenerImpuestos().Valor18Porciento! * 0.18);
+      comprasNetasMercadoInterno?.current?.obtenerImpuestos().Valor18Porciento! * 0.18 | 0);
     setCreditoImportaciones15Porciento((
       importacionesFueraCA?.current?.obtenerImpuestos().Valor15Porciento! +
-      importacionesCA?.current?.obtenerImpuestos().Valor15Porciento!) * 0.15);
+      importacionesCA?.current?.obtenerImpuestos().Valor15Porciento!) * 0.15 | 0);
     setCreditoImportaciones18Porciento((
       importacionesFueraCA?.current?.obtenerImpuestos().Valor18Porciento! +
-      importacionesCA?.current?.obtenerImpuestos().Valor18Porciento!) * 0.18);
+      importacionesCA?.current?.obtenerImpuestos().Valor18Porciento!) * 0.18 | 0);
     setTotalCreditoFiscal(
-      creditoComprasMercadoInterno15Porciento + creditoComprasMercadoInterno18Porciento +
-      creditoImportaciones15Porciento + creditoImportaciones18Porciento
+      (creditoComprasMercadoInterno15Porciento + creditoComprasMercadoInterno18Porciento +
+      creditoImportaciones15Porciento + creditoImportaciones18Porciento)  | 0
     );
   }
 
   useImperativeHandle(ref, () => ({
     obtenerCreditoFiscal(): number {
-      return totalCreditoFiscal;
+      return totalCreditoFiscal | 0;
     },
     calcularCreditoTotal
   }))

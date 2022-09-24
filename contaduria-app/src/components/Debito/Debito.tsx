@@ -21,19 +21,19 @@ export const Debito = forwardRef((props: any, ref) => {
       ventasExentasMercadoInterno?.current?.obtenerImpuestos().Valor15Porciento! +
       exportacionesFueraCA?.current?.obtenerImpuestos().Valor15Porciento! +
       exportacionesCA?.current?.obtenerImpuestos().Valor15Porciento! +
-      ventasExoneradas?.current?.obtenerImpuestos().Valor15Porciento!) * 0.15);
+      ventasExoneradas?.current?.obtenerImpuestos().Valor15Porciento!) * 0.15 | 0);
     setDebitoVentas18Porciento((
       ventasNetasMercadoInterno?.current?.obtenerImpuestos().Valor18Porciento! +
       ventasExentasMercadoInterno?.current?.obtenerImpuestos().Valor18Porciento! +
       exportacionesFueraCA?.current?.obtenerImpuestos().Valor18Porciento! +
       exportacionesCA?.current?.obtenerImpuestos().Valor18Porciento! +
-      ventasExoneradas?.current?.obtenerImpuestos().Valor18Porciento!) * 0.18);
-    setTotalDebitoFiscal(debitoVentas15Porciento + debitoVentas18Porciento);
+      ventasExoneradas?.current?.obtenerImpuestos().Valor18Porciento!) * 0.18 | 0);
+    setTotalDebitoFiscal(debitoVentas15Porciento + debitoVentas18Porciento  | 0);
   }
 
   useImperativeHandle(ref, () => ({
     obtenerDebitoFiscal(): number {
-      return totalDebitoFiscal;
+      return totalDebitoFiscal  | 0;
     },
     calcularDebitoTotal
   }))
