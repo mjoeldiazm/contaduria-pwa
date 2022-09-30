@@ -114,9 +114,6 @@ export default function Body() {
             setSaldoDefinitivoPeriodoFavorFisco(parseFloat(e.currentTarget.value));
           }} />
       </Box>
-      <Box>
-        <Button sx={{ width: '445px', marginX: '5px', marginBottom: '5px' }} variant="contained" onClick={() => calcularValores()} >Calcular</Button>
-      </Box>
     </>
   );
 }

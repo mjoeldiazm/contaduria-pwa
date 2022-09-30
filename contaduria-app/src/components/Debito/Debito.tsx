@@ -1,5 +1,5 @@
 import React, { forwardRef, useImperativeHandle, useRef, useState } from 'react';
-import { TextField } from '@mui/material';
+import { FormControl, InputAdornment, InputLabel, OutlinedInput, TextField } from '@mui/material';
 import Box from '@mui/material/Box';
 import { EntradaImpuesto } from '../EntradaImpuesto';
 import { ParImpuesto } from '../../Interfaces/interfaces';
@@ -51,12 +51,33 @@ export const Debito = forwardRef((props: any, ref) => {
       </Box>
       <p style={{ fontSize: 16, margin: 10, fontFamily: 'sans-serif' }}>Débito Por Ventas</p>
       <Box component='form' noValidate autoComplete='off' sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}>
-        <TextField key={'debitoVentas15Porciento'} disabled label='Valor para el 15%' value={debitoVentas15Porciento} />
-        <TextField key={'debitoVentas185Porciento'} disabled label='Valor para el 18%' value={debitoVentas18Porciento} />
+        <FormControl margin='normal'>
+        <InputLabel htmlFor="outlined-adornment-amount">Total para 15%</InputLabel>
+        <OutlinedInput
+          key={'debitoVentas15Porciento'} 
+          disabled label='Valor para el 15%' 
+          startAdornment={<InputAdornment position="start">L.</InputAdornment>}
+          value={debitoVentas15Porciento} />
+        </FormControl>
+        <FormControl margin='normal'>
+        <InputLabel htmlFor="outlined-adornment-amount">Total para 18%</InputLabel>
+        <OutlinedInput 
+          key={'debitoVentas185Porciento'} 
+          disabled label='Valor para el 18%' 
+          startAdornment={<InputAdornment position="start">L.</InputAdornment>}
+          value={debitoVentas18Porciento} />
+        </FormControl>
       </Box>
       <p style={{ fontWeight: 'bold', fontSize: 16, margin: 10, fontFamily: 'sans-serif' }}>Total Débito Fiscal</p>
       <Box component='form' noValidate autoComplete='off' sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}>
-        <TextField key={'totalDebitoFiscal'} disabled label='Total' value={totalDebitoFiscal} />
+        <FormControl margin='normal'>
+        <InputLabel htmlFor="outlined-adornment-amount">Total</InputLabel>
+        <OutlinedInput 
+        key={'totalDebitoFiscal'} 
+        disabled label='Total' 
+        startAdornment={<InputAdornment position="start">L.</InputAdornment>}
+        value={totalDebitoFiscal} />
+        </FormControl>
       </Box>
     </>
   );
