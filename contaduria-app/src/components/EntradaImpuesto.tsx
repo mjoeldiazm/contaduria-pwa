@@ -25,7 +25,7 @@ export const EntradaImpuesto = forwardRef((props: EntradaParImpuestoProps, ref) 
                 label='Valor para el 15%'
                 value={impuesto15Porciento}
                 type='number'
-                startAdornment={<InputAdornment position="start">L.</InputAdornment>}
+                startAdornment={<InputAdornment position="start">L</InputAdornment>}
                 onChange={(e) => {
                     setimpuesto15Porciento(parseFloat(e.currentTarget.value))
                 }}
@@ -37,7 +37,7 @@ export const EntradaImpuesto = forwardRef((props: EntradaParImpuestoProps, ref) 
                 label='Valor para el 18%'
                 type='number'
                 value={impuesto18Porciento}
-                startAdornment={<InputAdornment position="start">L.</InputAdornment>}
+                startAdornment={<InputAdornment position="start">L</InputAdornment>}
                 onChange={(e) => {
                     setimpuesto18Porciento(parseFloat(e.currentTarget.value))
                 }}

@@ -45,7 +45,7 @@ export const Credito = forwardRef((props: any, ref) => {
     <>
       <p style={{ fontWeight: 'bold', fontSize: 20, margin: 10, fontFamily: 'sans-serif' }}>Determinación del Crédito Fiscal</p>
       <hr />
-      <Box component='form' noValidate autoComplete='off' sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}>
+      <Box marginLeft={2} component='form' noValidate autoComplete='off' sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}>
         <EntradaImpuesto ref={comprasNetasMercadoInterno} Texto='Compras Netas en el Mercado Interno' />
         <EntradaImpuesto ref={comprasExentasMercadoInterno} Texto='Compras Exentas en el Mercado Interno' />
         <EntradaImpuesto ref={comprasExoneradas} Texto='Compras Exoneradas' />
@@ -53,13 +53,13 @@ export const Credito = forwardRef((props: any, ref) => {
         <EntradaImpuesto ref={importacionesCA} Texto='Importaciones (Centroamérica)' />
       </Box>
       <p style={{ fontSize: 16, margin: 10, fontFamily: 'sans-serif' }}>Crédito por Compras en Mercado Interno</p>
-      <Box component='form' noValidate autoComplete='off' sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}>
+      <Box marginLeft={2} component='form' noValidate autoComplete='off' sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}>
         <FormControl margin='normal'>
         <InputLabel htmlFor="outlined-adornment-amount">Total para 15%</InputLabel>
         <OutlinedInput
         key={'creditoComprasMercadoInterno15Porciento'} 
         disabled label='Valor para el 15%' 
-        startAdornment={<InputAdornment position="start">L.</InputAdornment>}
+        startAdornment={<InputAdornment position="start">L</InputAdornment>}
         value={creditoComprasMercadoInterno15Porciento} />
         </FormControl>
         <FormControl margin='normal'>
@@ -67,19 +67,19 @@ export const Credito = forwardRef((props: any, ref) => {
         <OutlinedInput 
         key={'creditoComprasMercadoInterno18Porciento'} 
         disabled label='Valor para el 18%' 
-        startAdornment={<InputAdornment position="start">L.</InputAdornment>}
+        startAdornment={<InputAdornment position="start">L</InputAdornment>}
         value={creditoComprasMercadoInterno18Porciento} />
         </FormControl>
         
       </Box>
       <p style={{ fontSize: 16, margin: 10, fontFamily: 'sans-serif' }}>Crédito por Importaciones</p>
-      <Box component='form' noValidate autoComplete='off' sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}>
+      <Box marginLeft={2} component='form' noValidate autoComplete='off' sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}>
         <FormControl margin='normal'>
         <InputLabel htmlFor="outlined-adornment-amount">Total para 15%</InputLabel>
         <OutlinedInput 
         key={'creditoImportaciones15Porciento'} 
         disabled label='Valor para el 15%' 
-        startAdornment={<InputAdornment position="start">L.</InputAdornment>}
+        startAdornment={<InputAdornment position="start">L</InputAdornment>}
         value={creditoImportaciones15Porciento} />
         </FormControl>
         <FormControl margin='normal'>
@@ -87,18 +87,18 @@ export const Credito = forwardRef((props: any, ref) => {
         <OutlinedInput 
         key={'creditoImportaciones18Porciento'} 
         disabled label='Valor para el 18%' 
-        startAdornment={<InputAdornment position="start">L.</InputAdornment>}
+        startAdornment={<InputAdornment position="start">L</InputAdornment>}
         value={creditoImportaciones18Porciento} />
         </FormControl>
       </Box>
       <p style={{ fontWeight: 'bold', fontSize: 16, margin: 10, fontFamily: 'sans-serif' }}>Total Crédito Fiscal</p>
-      <Box component='form' noValidate autoComplete='off' sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}>
+      <Box marginLeft={2} component='form' noValidate autoComplete='off' sx={{ '& .MuiTextField-root': { m: 1, width: '25ch' } }}>
         <FormControl margin='normal'>
         <InputLabel htmlFor="outlined-adornment-amount">Total</InputLabel>
         <OutlinedInput 
         key={'totalCreditoFiscal'} 
         disabled label='Total' 
-        startAdornment={<InputAdornment position="start">L.</InputAdornment>}
+        startAdornment={<InputAdornment position="start">L</InputAdornment>}
         value={totalCreditoFiscal} />
         </FormControl>
       </Box>

@@ -11,7 +11,7 @@ export default function ResponsiveAppBar() {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Proyecto Contaduría
+            Impuestos App
           </Typography>
           <Avatar src={logo} alt='Logo Ceutec'/>
         </Toolbar>
