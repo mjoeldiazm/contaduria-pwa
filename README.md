@@ -13,7 +13,7 @@
 
 * Website: https://contaduria-pwa.vercel.app/
 * Github: [@RandellSCaballero](https://github.com/RandellSCaballero), [@mjoeldiazm](https://github.com/mjoeldiazm)
-* About Website: Mobile application made for a project received by our college
+* About Website: Mobile application made to calculate sales taxes, received by our college
 
 
 ## Show your support
