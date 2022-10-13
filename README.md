@@ -1,11 +1,11 @@
 <h1 align="center">
-  Contaduria App 👷
+  Contaduria App 📒
 </h1>
 
 
 > About
 
-### 🏠 [Homepage](https://github.com/RandellSCaballero)
+### 🏠 [Homepage](https://github.com/mjoeldiazm/contaduria-pwa)
 
 ## Authors
 
@@ -15,10 +15,6 @@
 * Github: [@RandellSCaballero](https://github.com/RandellSCaballero), [@mjoeldiazm](https://github.com/mjoeldiazm)
 *About Website: Mobile application made for a project received by our college
 
-
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/MGeovany/cei-web-portal/issues). 
 
 ## Show your support
 
